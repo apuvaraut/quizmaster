@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QuizMaster - Sign in</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+  <div class="auth-card">
+    <h1>QuizMaster</h1>
+    <p class="muted">Practice with quizzes and get AI explanations for every mistake.</p>
+
+    <div class="tabs">
+      <button id="tabLogin" class="tab active" onclick="switchTab('login')">Sign in</button>
+      <button id="tabRegister" class="tab" onclick="switchTab('register')">Create account</button>
+    </div>
+
+    <div id="loginForm">
+      <label for="lEmail">Email</label>
+      <input id="lEmail" type="email" placeholder="you@example.com">
+      <label for="lPass">Password</label>
+      <input id="lPass" type="password" placeholder="Your password">
+      <button class="btn full" onclick="login()">Sign in</button>
+    </div>
+
+    <div id="registerForm" class="hidden">
+      <label for="rName">Name</label>
+      <input id="rName" type="text" placeholder="Your name">
+      <label for="rEmail">Email</label>
+      <input id="rEmail" type="email" placeholder="you@example.com">
+      <label for="rPass">Password</label>
+      <input id="rPass" type="password" placeholder="At least 6 characters">
+      <button class="btn full" onclick="register()">Create account</button>
+    </div>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="js/app.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

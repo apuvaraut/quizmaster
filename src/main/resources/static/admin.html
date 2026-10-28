@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QuizMaster - Admin</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav id="nav"></nav>
+  <div class="container">
+    <h2>Generate a quiz with AI</h2>
+    <div class="card">
+      <p class="muted">Type a topic and the AI writes the questions, options, answers and explanations.</p>
+      <label for="gTopic">Topic</label>
+      <input id="gTopic" placeholder="e.g. Spring Boot basics, SQL joins, Java collections">
+      <div class="row">
+        <div><label for="gCount">Number of questions</label><input id="gCount" type="number" min="1" max="10" value="5"></div>
+        <div><label for="gDiff">Difficulty</label>
+          <select id="gDiff"><option>easy</option><option selected>medium</option><option>hard</option></select></div>
+      </div>
+      <button id="genBtn" class="btn" onclick="generate()">Generate quiz</button>
+    </div>
+
+    <div class="section two-col">
+      <div>
+        <h2>Create a quiz manually</h2>
+        <div class="card">
+          <label for="cTitle">Title</label><input id="cTitle">
+          <label for="cTopic">Topic</label><input id="cTopic">
+          <label for="cDesc">Description</label><textarea id="cDesc"></textarea>
+          <button class="btn" onclick="createQuiz()">Create quiz</button>
+        </div>
+      </div>
+      <div>
+        <h2>All quizzes</h2>
+        <div class="card" id="quizTable"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Add a question</h2>
+      <div class="card">
+        <label for="qQuiz">Quiz</label><select id="qQuiz"></select>
+        <label for="qText">Question</label><textarea id="qText"></textarea>
+        <div class="row">
+          <div><label for="qA">Option A</label><input id="qA"></div>
+          <div><label for="qB">Option B</label><input id="qB"></div>
+          <div><label for="qC">Option C</label><input id="qC"></div>
+          <div><label for="qD">Option D</label><input id="qD"></div>
+        </div>
+        <div class="row">
+          <div><label for="qCorrect">Correct option</label>
+            <select id="qCorrect"><option>A</option><option>B</option><option>C</option><option>D</option></select></div>
+          <div><label for="qExp">Explanation (optional)</label><input id="qExp"></div>
+        </div>
+        <button class="btn" onclick="addQuestion()">Add question</button>
+      </div>
+    </div>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
